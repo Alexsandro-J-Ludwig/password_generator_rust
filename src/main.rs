@@ -19,9 +19,9 @@ fn user_mananger(){
         .expect("Failed to read line");
     
     let pass_final = match config.trim() {
-        "A" => render_pass(alpha),
-        "B" => render_pass(&(alpha.to_string() + numbers)),
-        "C" => render_pass(&(alpha.to_string() + numbers + especial)),
+        "A" | "a" | "1" => render_pass(alpha),
+        "B" | "b" | "2" => render_pass(&(alpha.to_string() + numbers)),
+        "C" | "c" | "3" => render_pass(&(alpha.to_string() + numbers + especial)),
         _ => {
             eprintln!("Opção inválida, selecione A, B ou C");
             std::process::exit(1);
